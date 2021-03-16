@@ -76,6 +76,9 @@ public enum PlayerError: Int {
     /// Play the video
     func play()
     
+    /// Set Rate of video
+    func setRate(_ rate: Float)
+    
     /// Pause the video
     func pause()
 }
@@ -107,6 +110,7 @@ public enum PlayerError: Int {
 @objc public enum FillMode: Int {
     case fit
     case fill
+    case scaleToFit
 }
 
 /// The metadata that should be attached to any type of text track.

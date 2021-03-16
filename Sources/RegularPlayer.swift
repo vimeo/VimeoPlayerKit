@@ -136,6 +136,10 @@ extension AVMediaSelectionOption: TextTrackMetadata {
         self.player.play()
     }
     
+    open func setRate(_ rate: Float) {
+        self.player.rate = rate
+    }
+    
     open func pause() {
         self.player.pause()
     }
@@ -424,6 +428,9 @@ extension RegularPlayer: FillModeCapable {
             case .fill:
                 
                 gravity = .resizeAspectFill
+            case .scaleToFit:
+                
+                gravity = .resize
             }
 
             (self.view.layer as! AVPlayerLayer).videoGravity = gravity
